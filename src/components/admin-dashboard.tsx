@@ -138,6 +138,26 @@ export function AdminDashboard({ initialData }: { initialData: AdminData }) {
     });
   };
 
+  const handleReleaseReservation = (itemId: string) => {
+    setError("");
+    setMessage("");
+
+    startTransition(async () => {
+      const response = await fetch(`/api/admin/items/${itemId}/release`, { method: "POST" });
+      const payload = (await response.json().catch(() => null)) as { error?: string; item?: GiftItem } | null;
+
+      if (!response.ok || !payload?.item) {
+        setError(payload?.error ?? "Nao foi possivel remover a reserva.");
+        return;
+      }
+
+      const updatedItem = payload.item;
+      const nextItems = items.map((item) => (item.id === itemId ? updatedItem : item));
+      refreshDrafts(nextItems);
+      setMessage("Reserva removida. O item voltou a ficar disponivel.");
+    });
+  };
+
   const handleSettingsSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setError("");
@@ -361,6 +381,7 @@ export function AdminDashboard({ initialData }: { initialData: AdminData }) {
                         Status atual: <strong className="text-foreground">{item.status === "reserved" ? "Reservado" : "Disponivel"}</strong>
                       </span>
                       {item.reservedByName ? <span>Reservado por {item.reservedByName}</span> : null}
+                      {item.reservedByWhatsApp ? <span>WhatsApp: {item.reservedByWhatsApp}</span> : null}
                     </div>
 
                     <div className="mt-5 flex flex-wrap gap-3">
@@ -372,6 +393,17 @@ export function AdminDashboard({ initialData }: { initialData: AdminData }) {
                       >
                         Salvar
                       </button>
+
+                      {item.status === "reserved" ? (
+                        <button
+                          type="button"
+                          onClick={() => handleReleaseReservation(item.id)}
+                          disabled={isPending}
+                          className="rounded-full border border-amber-200 bg-amber-50 px-4 py-2.5 text-sm font-semibold text-amber-900 hover:bg-amber-100 disabled:opacity-60"
+                        >
+                          Remover reserva
+                        </button>
+                      ) : null}
 
                       <button
                         type="button"

@@ -219,13 +219,12 @@ export function GiftRegistryPage({ initialData }: { initialData: PublicData }) {
               className="object-cover object-center"
             />
 
-            <Image
+            <StickerDecoration
               src="/66715.png"
-              alt=""
               width={253}
               height={347}
-              aria-hidden="true"
-              className="pointer-events-none absolute right-2 top-2 h-auto w-[58px] rotate-[6deg] opacity-85 drop-shadow-[0_12px_28px_rgba(62,37,18,0.18)] sm:right-3 sm:top-3 sm:w-[82px] md:right-4 md:top-2 md:w-[96px] lg:right-2 lg:top-0 lg:w-[104px]"
+              wrapperClassName="absolute right-2 top-2 rotate-[6deg] sm:right-3 sm:top-3 md:right-4 md:top-2 lg:right-2 lg:top-0"
+              imageClassName="w-[58px] sm:w-[82px] md:w-[96px] lg:w-[104px]"
             />
           </div>
         </div>
@@ -385,13 +384,12 @@ export function GiftRegistryPage({ initialData }: { initialData: PublicData }) {
             <h2 className="font-heading mt-3 text-[2rem] leading-none text-foreground sm:text-4xl">Se preferir transferir</h2>
             <p className="mt-4 text-sm leading-7 text-muted">{data.settings.pixMessage}</p>
 
-            <Image
+            <StickerDecoration
               src="/51470.png"
-              alt=""
               width={293}
               height={320}
-              aria-hidden="true"
-              className="pointer-events-none absolute right-2 top-3 h-auto w-[52px] rotate-[12deg] opacity-75 sm:right-3 sm:top-4 sm:w-[72px] md:right-4 md:top-5 md:w-[82px] lg:right-3 lg:top-4 lg:w-[90px]"
+              wrapperClassName="absolute right-2 top-3 rotate-[12deg] sm:right-3 sm:top-4 md:right-4 md:top-5 lg:right-3 lg:top-4"
+              imageClassName="w-[52px] sm:w-[72px] md:w-[82px] lg:w-[90px] opacity-90"
             />
 
             <div className="mt-6 rounded-[20px] border border-border bg-white px-4 py-4 sm:rounded-[24px]">
@@ -419,13 +417,12 @@ export function GiftRegistryPage({ initialData }: { initialData: PublicData }) {
             <h2 className="font-heading mt-3 text-[2rem] leading-none text-foreground sm:text-4xl">Com carinho</h2>
             <p className="mt-4 text-sm leading-7 text-muted">{data.settings.closingMessage}</p>
 
-            <Image
+            <StickerDecoration
               src="/31501.png"
-              alt=""
               width={258}
               height={307}
-              aria-hidden="true"
-              className="pointer-events-none absolute bottom-2 right-2 h-auto w-[48px] -rotate-[8deg] opacity-70 sm:bottom-3 sm:right-4 sm:w-[68px] md:bottom-4 md:right-4 md:w-[78px] lg:bottom-3 lg:right-4 lg:w-[84px]"
+              wrapperClassName="absolute bottom-2 right-2 -rotate-[8deg] sm:bottom-3 sm:right-4 md:bottom-4 md:right-4 lg:bottom-3 lg:right-4"
+              imageClassName="w-[48px] sm:w-[68px] md:w-[78px] lg:w-[84px] opacity-90"
             />
           </section>
         </aside>
@@ -485,6 +482,35 @@ function Metric({ label, value, className = "" }: { label: string; value: string
     <div className={`rounded-[22px] border border-border bg-white/70 px-4 py-4 sm:rounded-[26px] sm:px-5 sm:py-5 ${className}`}>
       <p className="text-sm text-muted">{label}</p>
       <p className="mt-2 text-2xl font-semibold text-foreground sm:text-3xl">{value}</p>
+    </div>
+  );
+}
+
+function StickerDecoration({
+  src,
+  width,
+  height,
+  wrapperClassName = "",
+  imageClassName = "",
+}: {
+  src: string;
+  width: number;
+  height: number;
+  wrapperClassName?: string;
+  imageClassName?: string;
+}) {
+  return (
+    <div
+      className={`pointer-events-none flex items-center justify-center rounded-2xl p-0.5 sm:rounded-3xl sm:p-1 ${wrapperClassName}`}
+    >
+      <Image
+        src={src}
+        alt=""
+        width={width}
+        height={height}
+        aria-hidden="true"
+        className={`h-auto ${imageClassName}`}
+      />
     </div>
   );
 }

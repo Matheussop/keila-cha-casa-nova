@@ -168,6 +168,36 @@ export async function releaseGiftItem(input: {
   return mapItem(data as ItemRow);
 }
 
+export async function adminReleaseGiftItem(itemId: string) {
+  if (!isSupabaseConfigured()) {
+    throw new Error("Configure o Supabase para salvar reservas online.");
+  }
+
+  const supabase = getSupabaseAdminClient();
+  const { data, error } = await supabase
+    .from("gift_items")
+    .update({
+      status: "available",
+      reserved_by_name: null,
+      reserved_by_whatsapp: null,
+      reserved_at: null,
+    })
+    .eq("id", itemId)
+    .eq("status", "reserved")
+    .select("id, name, category, note, status, reserved_by_name, reserved_by_whatsapp")
+    .maybeSingle();
+
+  if (error) {
+    throw new Error(error.message);
+  }
+
+  if (!data) {
+    throw new Error("Esse item nao esta reservado.");
+  }
+
+  return mapItem(data as ItemRow);
+}
+
 export async function createGiftItem(input: { name: string; category: string; note: string }) {
   if (!isSupabaseConfigured()) {
     throw new Error("Configure o Supabase para salvar os itens online.");
