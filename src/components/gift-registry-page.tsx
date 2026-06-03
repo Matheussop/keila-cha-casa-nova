@@ -225,7 +225,7 @@ export function GiftRegistryPage({ initialData }: { initialData: PublicData }) {
               width={253}
               height={347}
               aria-hidden="true"
-              className="pointer-events-none absolute -right-3 -top-2 h-auto w-[78px] rotate-[8deg] opacity-90 drop-shadow-[0_12px_28px_rgba(62,37,18,0.18)] sm:right-2 sm:top-2 sm:w-[104px]"
+              className="pointer-events-none absolute right-2 top-2 h-auto w-[58px] rotate-[6deg] opacity-85 drop-shadow-[0_12px_28px_rgba(62,37,18,0.18)] sm:right-3 sm:top-3 sm:w-[82px] md:right-4 md:top-2 md:w-[96px] lg:right-2 lg:top-0 lg:w-[104px]"
             />
           </div>
         </div>
@@ -380,7 +380,7 @@ export function GiftRegistryPage({ initialData }: { initialData: PublicData }) {
         </div>
 
         <aside className="space-y-6">
-          <section className="soft-card relative overflow-hidden rounded-[28px] p-4 sm:rounded-[32px] sm:p-8">
+          <section className="soft-card relative overflow-hidden rounded-[28px] p-4 pr-20 sm:rounded-[32px] sm:p-8 sm:pr-24">
             <p className="text-[11px] uppercase tracking-[0.24em] text-muted sm:text-sm sm:tracking-[0.28em]">Contribuicao via Pix</p>
             <h2 className="font-heading mt-3 text-[2rem] leading-none text-foreground sm:text-4xl">Se preferir transferir</h2>
             <p className="mt-4 text-sm leading-7 text-muted">{data.settings.pixMessage}</p>
@@ -391,7 +391,7 @@ export function GiftRegistryPage({ initialData }: { initialData: PublicData }) {
               width={293}
               height={320}
               aria-hidden="true"
-              className="pointer-events-none absolute -right-4 top-3 h-auto w-[68px] rotate-[14deg] opacity-75 sm:right-3 sm:top-4 sm:w-[90px]"
+              className="pointer-events-none absolute right-2 top-3 h-auto w-[52px] rotate-[12deg] opacity-75 sm:right-3 sm:top-4 sm:w-[72px] md:right-4 md:top-5 md:w-[82px] lg:right-3 lg:top-4 lg:w-[90px]"
             />
 
             <div className="mt-6 rounded-[20px] border border-border bg-white px-4 py-4 sm:rounded-[24px]">
@@ -414,7 +414,7 @@ export function GiftRegistryPage({ initialData }: { initialData: PublicData }) {
             </button>
           </section>
 
-          <section className="soft-card relative overflow-hidden rounded-[28px] p-4 sm:rounded-[32px] sm:p-8">
+          <section className="soft-card relative overflow-hidden rounded-[28px] p-4 pb-20 sm:rounded-[32px] sm:p-8 sm:pb-24">
             <p className="text-[11px] uppercase tracking-[0.24em] text-muted sm:text-sm sm:tracking-[0.28em]">Agradecimento</p>
             <h2 className="font-heading mt-3 text-[2rem] leading-none text-foreground sm:text-4xl">Com carinho</h2>
             <p className="mt-4 text-sm leading-7 text-muted">{data.settings.closingMessage}</p>
@@ -425,7 +425,7 @@ export function GiftRegistryPage({ initialData }: { initialData: PublicData }) {
               width={258}
               height={307}
               aria-hidden="true"
-              className="pointer-events-none absolute bottom-2 right-3 h-auto w-[62px] -rotate-[10deg] opacity-70 sm:bottom-3 sm:right-4 sm:w-[84px]"
+              className="pointer-events-none absolute bottom-2 right-2 h-auto w-[48px] -rotate-[8deg] opacity-70 sm:bottom-3 sm:right-4 sm:w-[68px] md:bottom-4 md:right-4 md:w-[78px] lg:bottom-3 lg:right-4 lg:w-[84px]"
             />
           </section>
         </aside>
