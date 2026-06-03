@@ -1,36 +1,73 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Site da Keila
 
-## Getting Started
+Site de cha de casa nova com:
 
-First, run the development server:
+- lista de presentes compartilhada online
+- bloqueio de item reservado
+- opcao de desmarcar item usando nome e WhatsApp da reserva
+- chave Pix com botao para copiar
+- area administrativa escondida para editar itens e textos
+- deploy pensado para Vercel
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Stack
+
+- Next.js 16
+- React 19
+- Supabase
+- Tailwind CSS 4
+
+## Variaveis de ambiente
+
+Crie um arquivo `.env.local` com:
+
+```env
+SUPABASE_URL=
+SUPABASE_SERVICE_ROLE_KEY=
+ADMIN_PASSWORD=
+ADMIN_SESSION_SALT=
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+`ADMIN_SESSION_SALT` pode ser qualquer texto longo e privado.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Banco no Supabase
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Execute o SQL do arquivo `supabase/schema.sql`.
 
-## Learn More
+Esse script cria:
 
-To learn more about Next.js, take a look at the following resources:
+- tabela `gift_items`
+- tabela `site_settings`
+- itens padrao do cha de casa nova
+- configuracao inicial com o nome `Keila`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Rodando localmente
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+npm install
+npm run dev
+```
 
-## Deploy on Vercel
+Site publico:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```text
+http://localhost:3000
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Painel escondido:
+
+```text
+http://localhost:3000/acesso-keila
+```
+
+## Deploy na Vercel
+
+1. Suba este projeto para um repositorio Git.
+2. Importe o repositorio na Vercel.
+3. Adicione as mesmas variaveis de ambiente do `.env.local`.
+4. Garanta que o banco do Supabase ja recebeu o `supabase/schema.sql`.
+5. Publique.
+
+## Observacoes
+
+- Sem Supabase configurado, o layout abre com dados de exemplo, mas reservas e edicoes nao sao salvas online.
+- A rota administrativa nao aparece no site publico.
