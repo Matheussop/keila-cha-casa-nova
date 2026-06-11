@@ -179,7 +179,7 @@ export function GiftRegistryPage({ initialData }: { initialData: PublicData }) {
             <div>
               <p className="text-[11px] uppercase tracking-[0.28em] text-muted sm:text-sm sm:tracking-[0.34em]">Cha de casa nova</p>
               <h1 className="section-title mt-4 text-foreground">{data.settings.displayName}</h1>
-              <p className="mt-4 max-w-2xl text-sm leading-7 text-muted sm:mt-6 sm:text-lg sm:leading-8">
+              <p className="mt-4 max-w-2xl whitespace-pre-line text-sm leading-7 text-muted sm:mt-6 sm:text-lg sm:leading-8">
                 {data.settings.heroMessage}
               </p>
             </div>
@@ -289,7 +289,7 @@ export function GiftRegistryPage({ initialData }: { initialData: PublicData }) {
                         {item.category}
                       </span>
                       <h3 className="mt-3 text-lg font-semibold text-foreground sm:text-xl">{item.name}</h3>
-                      {item.note ? <p className="mt-2 text-sm leading-6 text-muted">{item.note}</p> : null}
+                      {item.note ? <p className="mt-2 whitespace-pre-line text-sm leading-6 text-muted">{item.note}</p> : null}
                       {item.status === "reserved" && item.reservedByName ? (
                         <p className="mt-3 text-xs font-medium uppercase tracking-[0.16em] text-danger">
                           reservado por {item.reservedByName}
@@ -382,14 +382,14 @@ export function GiftRegistryPage({ initialData }: { initialData: PublicData }) {
           <section className="soft-card relative overflow-hidden rounded-[28px] p-4 pr-20 sm:rounded-[32px] sm:p-8 sm:pr-24">
             <p className="text-[11px] uppercase tracking-[0.24em] text-muted sm:text-sm sm:tracking-[0.28em]">Contribuicao via Pix</p>
             <h2 className="font-heading mt-3 text-[2rem] leading-none text-foreground sm:text-4xl">Se preferir transferir</h2>
-            <p className="mt-4 text-sm leading-7 text-muted">{data.settings.pixMessage}</p>
+            <p className="mt-4 whitespace-pre-line text-sm leading-7 text-muted">{data.settings.pixMessage}</p>
 
             <StickerDecoration
               src="/51470.png"
               width={293}
               height={320}
               wrapperClassName="absolute right-2 top-3 rotate-[12deg] sm:right-3 sm:top-4 md:right-4 md:top-5 lg:right-3 lg:top-4"
-              imageClassName="w-[52px] sm:w-[72px] md:w-[82px] lg:w-[90px] opacity-90"
+              imageClassName="w-[80px] sm:w-[72px] md:w-[82px] lg:w-[90px] opacity-90"
             />
 
             <div className="mt-6 rounded-[20px] border border-border bg-white px-4 py-4 sm:rounded-[24px]">
@@ -415,7 +415,7 @@ export function GiftRegistryPage({ initialData }: { initialData: PublicData }) {
           <section className="soft-card relative overflow-hidden rounded-[28px] p-4 pb-20 sm:rounded-[32px] sm:p-8 sm:pb-24">
             <p className="text-[11px] uppercase tracking-[0.24em] text-muted sm:text-sm sm:tracking-[0.28em]">Agradecimento</p>
             <h2 className="font-heading mt-3 text-[2rem] leading-none text-foreground sm:text-4xl">Com carinho</h2>
-            <p className="mt-4 text-sm leading-7 text-muted">{data.settings.closingMessage}</p>
+            <p className="mt-4 whitespace-pre-line text-sm leading-7 text-muted">{data.settings.closingMessage}</p>
 
             <StickerDecoration
               src="/31501.png"
