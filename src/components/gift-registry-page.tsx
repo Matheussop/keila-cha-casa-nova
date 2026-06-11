@@ -177,7 +177,7 @@ export function GiftRegistryPage({ initialData }: { initialData: PublicData }) {
         <div className="grid gap-6 px-4 py-5 sm:px-8 sm:py-8 lg:grid-cols-[1.05fr_0.95fr] lg:px-10 lg:py-10">
           <div className="order-2 flex flex-col justify-between gap-6 lg:order-1 lg:gap-8">
             <div>
-              <p className="text-[11px] uppercase tracking-[0.28em] text-muted sm:text-sm sm:tracking-[0.34em]">Cha de casa nova</p>
+              <p className="text-[11px] uppercase tracking-[0.28em] text-muted sm:text-sm sm:tracking-[0.34em]">Chá de casa nova</p>
               <h1 className="section-title mt-4 text-foreground">{data.settings.displayName}</h1>
               <p className="mt-4 max-w-2xl whitespace-pre-line text-sm leading-7 text-muted sm:mt-6 sm:text-lg sm:leading-8">
                 {data.settings.heroMessage}
@@ -210,7 +210,7 @@ export function GiftRegistryPage({ initialData }: { initialData: PublicData }) {
             </div>
           </div>
 
-          <div className="order-1 relative min-h-[220px] overflow-hidden rounded-[24px] bg-[#efe1d0] sm:min-h-[320px] sm:rounded-[32px] lg:order-2 lg:min-h-[360px]">
+          <div className="order-1 relative min-h-[220px] overflow-hidden rounded-[24px] bg-[#ffcdb9] sm:min-h-[320px] sm:rounded-[32px] lg:order-2 lg:min-h-[360px]">
             <Image
               src="/housewarming-hero.svg"
               alt="Ilustracao decorativa de casa nova"
@@ -285,7 +285,7 @@ export function GiftRegistryPage({ initialData }: { initialData: PublicData }) {
                 >
                   <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between sm:gap-4">
                     <div>
-                      <span className="inline-flex rounded-full bg-[#f1e4d5] px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-accent-strong">
+                      <span className="inline-flex rounded-full bg-[#ffdcd0] px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-accent-strong">
                         {item.category}
                       </span>
                       <h3 className="mt-3 text-lg font-semibold text-foreground sm:text-xl">{item.name}</h3>
@@ -321,7 +321,7 @@ export function GiftRegistryPage({ initialData }: { initialData: PublicData }) {
                   </div>
 
                   {isActive ? (
-                    <div className="mt-5 rounded-[20px] bg-[#f8f1e9] p-3.5 sm:rounded-[24px] sm:p-4">
+                    <div className="mt-5 rounded-[20px] bg-[#fff0e8] p-3.5 sm:rounded-[24px] sm:p-4">
                       <div className="grid gap-3">
                         <input
                           value={currentForm.reservedByName}
@@ -434,13 +434,13 @@ export function GiftRegistryPage({ initialData }: { initialData: PublicData }) {
 function FeedbackToast({ feedback }: { feedback: FeedbackState }) {
   const classes =
     feedback.type === "success"
-      ? "border-[#cfdcc8] bg-[#f4f8f1] text-success"
-      : "border-[#efc6c6] bg-[#fff4f4] text-danger";
+      ? "border-[#cfe0ce] bg-[#f3f8f1] text-success"
+      : "border-[#efb2a2] bg-[#ffefea] text-danger";
 
   return (
     <div className="pointer-events-none fixed inset-x-4 bottom-4 z-50 flex justify-center sm:inset-x-6 sm:bottom-6">
       <div
-        className={`pointer-events-auto w-full max-w-md rounded-[24px] border px-4 py-3 shadow-[0_18px_40px_rgba(54,36,23,0.14)] backdrop-blur ${classes}`}
+        className={`pointer-events-auto w-full max-w-md rounded-[24px] border px-4 py-3 shadow-[0_18px_40px_rgba(153,85,57,0.16)] backdrop-blur ${classes}`}
       >
         <p className="text-sm font-semibold">{feedback.type === "success" ? "Tudo certo" : "Atencao"}</p>
         <p className="mt-1 text-sm leading-6">{feedback.text}</p>
@@ -519,8 +519,8 @@ function StatusBadge({ status }: { status: GiftItem["status"] }) {
   const label = status === "reserved" ? "Reservado" : "Disponivel";
   const classes =
     status === "reserved"
-      ? "bg-[#efe1dd] text-danger"
-      : "bg-[#e4eee0] text-success";
+      ? "bg-[#ffd9cf] text-danger"
+      : "bg-[#e4efe2] text-success";
 
   return (
     <span className={`inline-flex w-fit rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] ${classes}`}>

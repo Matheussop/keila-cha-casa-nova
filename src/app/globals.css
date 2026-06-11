@@ -1,17 +1,17 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f6f1ea;
-  --foreground: #2d241d;
-  --muted: #7a6858;
-  --surface: rgba(255, 252, 247, 0.78);
-  --surface-strong: #fffaf4;
-  --border: rgba(124, 96, 68, 0.16);
-  --accent: #8f6f54;
-  --accent-strong: #6e5138;
-  --success: #60775d;
-  --danger: #a25757;
-  --shadow: 0 24px 80px rgba(79, 56, 35, 0.12);
+  --background: #fff0e8;
+  --foreground: #4c2619;
+  --muted: #925847;
+  --surface: rgba(255, 248, 244, 0.88);
+  --surface-strong: #fffaf7;
+  --border: rgba(223, 90, 47, 0.2);
+  --accent: #df5a2f;
+  --accent-strong: #c94b22;
+  --success: #5f8f63;
+  --danger: #c6452f;
+  --shadow: 0 24px 80px rgba(182, 79, 40, 0.16);
 }
 
 @theme inline {
@@ -48,7 +48,8 @@ body::before {
   inset: 0;
   background:
     radial-gradient(circle at top left, rgba(255, 255, 255, 0.9), transparent 32%),
-    radial-gradient(circle at bottom right, rgba(196, 170, 143, 0.22), transparent 28%);
+    radial-gradient(circle at bottom right, rgba(223, 90, 47, 0.24), transparent 28%),
+    radial-gradient(circle at 80% 20%, rgba(255, 177, 129, 0.2), transparent 22%);
   pointer-events: none;
   z-index: -1;
 }
@@ -79,11 +80,11 @@ select {
 input:focus,
 textarea:focus,
 select:focus {
-  box-shadow: 0 0 0 4px rgba(143, 111, 84, 0.14);
+  box-shadow: 0 0 0 4px rgba(223, 90, 47, 0.14);
 }
 
 ::selection {
-  background: rgba(143, 111, 84, 0.18);
+  background: rgba(223, 90, 47, 0.18);
 }
 
 .font-heading {
@@ -98,9 +99,9 @@ select:focus {
 }
 
 .soft-card {
-  background: rgba(255, 250, 244, 0.94);
-  border: 1px solid rgba(124, 96, 68, 0.12);
-  box-shadow: 0 18px 48px rgba(79, 56, 35, 0.08);
+  background: rgba(255, 246, 241, 0.96);
+  border: 1px solid rgba(223, 90, 47, 0.14);
+  box-shadow: 0 18px 48px rgba(182, 79, 40, 0.11);
 }
 
 .section-title {
