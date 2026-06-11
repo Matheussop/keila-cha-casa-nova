@@ -98,7 +98,7 @@ export function GiftRegistryPage({ initialData }: { initialData: PublicData }) {
     const payload = (await response.json().catch(() => null)) as { error?: string } | null;
 
     if (!response.ok) {
-      setFeedback({ type: "error", text: payload?.error ?? "Nao foi possivel reservar o item." });
+      setFeedback({ type: "error", text: payload?.error ?? "Não foi possível reservar o item." });
       setIsSubmitting(false);
       return;
     }
@@ -135,14 +135,14 @@ export function GiftRegistryPage({ initialData }: { initialData: PublicData }) {
     const payload = (await response.json().catch(() => null)) as { error?: string } | null;
 
     if (!response.ok) {
-      setFeedback({ type: "error", text: payload?.error ?? "Nao foi possivel liberar o item." });
+      setFeedback({ type: "error", text: payload?.error ?? "Não foi possível liberar o item." });
       setIsSubmitting(false);
       return;
     }
 
     setFeedback({
       type: "success",
-      text: `O item ${item.name} ficou disponivel novamente.`,
+      text: `O item ${item.name} ficou disponível novamente.`,
     });
     setHighlightedItemId(item.id);
     setActiveItemId(null);
@@ -187,7 +187,7 @@ export function GiftRegistryPage({ initialData }: { initialData: PublicData }) {
 
             <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4">
               <Metric label="Itens totais" value={String(data.items.length)} />
-              <Metric label="Disponiveis" value={String(availableCount)} />
+              <Metric label="Disponíveis" value={String(availableCount)} />
               <Metric label="Reservados" value={String(reservedCount)} className="col-span-2 sm:col-span-1" />
             </div>
 
@@ -381,10 +381,10 @@ export function GiftRegistryPage({ initialData }: { initialData: PublicData }) {
 
         <aside className="space-y-6">
           <section className="soft-card rounded-[28px] p-4 sm:rounded-[32px] sm:p-8">
-            <p className="text-[11px] uppercase tracking-[0.24em] text-muted sm:text-sm sm:tracking-[0.28em]">Lista de sugestoes</p>
+            <p className="text-[11px] uppercase tracking-[0.24em] text-muted sm:text-sm sm:tracking-[0.28em]">Lista de sugestões</p>
             <h2 className="font-heading mt-3 text-[2rem] leading-none text-foreground sm:text-4xl">Amazon</h2>
             <p className="mt-4 whitespace-pre-line text-sm leading-7 text-muted">
-              Preparei uma lista de sugestoes na Amazon como referencia para facilitar, mas, acima de tudo, o que eu mais quero e a sua presenca e o seu carinho!
+              Preparei uma lista de sugestões na Amazon como referencia para facilitar, mas, acima de tudo, o que eu mais quero e a sua presença e o seu carinho!
             </p>
 
             {amazonWishlistLink ? (
@@ -392,7 +392,7 @@ export function GiftRegistryPage({ initialData }: { initialData: PublicData }) {
                 href={amazonWishlistLink}
                 target="_blank"
                 rel="noreferrer"
-                className="mt-5 inline-flex w-full items-center justify-center rounded-full bg-foreground px-5 py-3.5 text-center text-sm font-semibold text-background hover:opacity-92"
+                className="mt-5 inline-flex w-full items-center justify-center rounded-full bg-accent px-5 py-3.5 text-center text-sm font-semibold text-background hover:opacity-92"
               >
                 Ver lista na Amazon
               </a>
@@ -404,7 +404,7 @@ export function GiftRegistryPage({ initialData }: { initialData: PublicData }) {
           </section>
 
           <section className="soft-card relative overflow-hidden rounded-[28px] p-4 pr-20 sm:rounded-[32px] sm:p-8 sm:pr-24">
-            <p className="text-[11px] uppercase tracking-[0.24em] text-muted sm:text-sm sm:tracking-[0.28em]">Contribuicao via Pix</p>
+            <p className="text-[11px] uppercase tracking-[0.24em] text-muted sm:text-sm sm:tracking-[0.28em]">Contribuição via Pix</p>
             <h2 className="font-heading mt-3 text-[2rem] leading-none text-foreground sm:text-4xl">Se preferir transferir</h2>
             <p className="mt-4 whitespace-pre-line text-sm leading-7 text-muted">{data.settings.pixMessage}</p>
 
