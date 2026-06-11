@@ -412,7 +412,7 @@ export function GiftRegistryPage({ initialData }: { initialData: PublicData }) {
             </button>
           </section>
 
-          <section className="soft-card relative overflow-hidden rounded-[28px] p-4 pb-20 sm:rounded-[32px] sm:p-8 sm:pb-24">
+          <section className="soft-card relative overflow-hidden rounded-[28px] p-4 pb-28 sm:rounded-[32px] sm:p-8 sm:pb-24">
             <p className="text-[11px] uppercase tracking-[0.24em] text-muted sm:text-sm sm:tracking-[0.28em]">Agradecimento</p>
             <h2 className="font-heading mt-3 text-[2rem] leading-none text-foreground sm:text-4xl">Com carinho</h2>
             <p className="mt-4 whitespace-pre-line text-sm leading-7 text-muted">{data.settings.closingMessage}</p>
@@ -422,7 +422,7 @@ export function GiftRegistryPage({ initialData }: { initialData: PublicData }) {
               width={258}
               height={307}
               wrapperClassName="absolute bottom-2 right-2 -rotate-[8deg] sm:bottom-3 sm:right-4 md:bottom-4 md:right-4 lg:bottom-3 lg:right-4"
-              imageClassName="w-[58px] sm:w-[68px] md:w-[78px] lg:w-[84px] opacity-90"
+              imageClassName="w-[92px] sm:w-[68px] md:w-[78px] lg:w-[84px] opacity-90"
             />
           </section>
         </aside>
