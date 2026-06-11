@@ -219,13 +219,13 @@ export function GiftRegistryPage({ initialData }: { initialData: PublicData }) {
               className="object-contain object-center"
             />
 
-            <StickerDecoration
+            {/* <StickerDecoration
               src="/66715.png"
               width={253}
               height={347}
               wrapperClassName="absolute right-2 top-2 rotate-[6deg] sm:right-3 sm:top-3 md:right-4 md:top-2 lg:right-2 lg:top-0"
               imageClassName="w-[58px] sm:w-[82px] md:w-[96px] lg:w-[104px]"
-            />
+            /> */}
           </div>
         </div>
       </section>
@@ -305,7 +305,7 @@ export function GiftRegistryPage({ initialData }: { initialData: PublicData }) {
                       <button
                         type="button"
                         onClick={() => setActiveItemId(isActive ? null : item.id)}
-                        className="w-full rounded-full bg-foreground px-4 py-3 text-sm font-semibold text-background hover:opacity-92 sm:w-auto sm:px-4 sm:py-2.5"
+                        className="w-full rounded-full bg-accent px-4 py-3 text-sm font-semibold text-background hover:opacity-92 sm:w-auto sm:px-4 sm:py-2.5"
                       >
                         Quero presentear
                       </button>
@@ -422,7 +422,7 @@ export function GiftRegistryPage({ initialData }: { initialData: PublicData }) {
               width={258}
               height={307}
               wrapperClassName="absolute bottom-2 right-2 -rotate-[8deg] sm:bottom-3 sm:right-4 md:bottom-4 md:right-4 lg:bottom-3 lg:right-4"
-              imageClassName="w-[48px] sm:w-[68px] md:w-[78px] lg:w-[84px] opacity-90"
+              imageClassName="w-[58px] sm:w-[68px] md:w-[78px] lg:w-[84px] opacity-90"
             />
           </section>
         </aside>
