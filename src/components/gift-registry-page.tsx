@@ -15,6 +15,7 @@ type FeedbackState = {
 };
 
 export function GiftRegistryPage({ initialData }: { initialData: PublicData }) {
+  const amazonWishlistLink = process.env.NEXT_PUBLIC_AMAZON_WISHLIST_URL?.trim() ?? "";
   const [data, setData] = useState(initialData);
   const [search, setSearch] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("Todas");
@@ -379,6 +380,29 @@ export function GiftRegistryPage({ initialData }: { initialData: PublicData }) {
         </div>
 
         <aside className="space-y-6">
+          <section className="soft-card rounded-[28px] p-4 sm:rounded-[32px] sm:p-8">
+            <p className="text-[11px] uppercase tracking-[0.24em] text-muted sm:text-sm sm:tracking-[0.28em]">Lista de sugestoes</p>
+            <h2 className="font-heading mt-3 text-[2rem] leading-none text-foreground sm:text-4xl">Amazon</h2>
+            <p className="mt-4 whitespace-pre-line text-sm leading-7 text-muted">
+              Preparei uma lista de sugestoes na Amazon como referencia para facilitar, mas, acima de tudo, o que eu mais quero e a sua presenca e o seu carinho!
+            </p>
+
+            {amazonWishlistLink ? (
+              <a
+                href={amazonWishlistLink}
+                target="_blank"
+                rel="noreferrer"
+                className="mt-5 inline-flex w-full items-center justify-center rounded-full bg-foreground px-5 py-3.5 text-center text-sm font-semibold text-background hover:opacity-92"
+              >
+                Ver lista na Amazon
+              </a>
+            ) : (
+              <div className="mt-5 rounded-[20px] border border-dashed border-border bg-white/60 px-4 py-4 text-sm text-muted">
+                Adicione a variavel <code>NEXT_PUBLIC_AMAZON_WISHLIST_URL</code> para exibir o link da lista.
+              </div>
+            )}
+          </section>
+
           <section className="soft-card relative overflow-hidden rounded-[28px] p-4 pr-20 sm:rounded-[32px] sm:p-8 sm:pr-24">
             <p className="text-[11px] uppercase tracking-[0.24em] text-muted sm:text-sm sm:tracking-[0.28em]">Contribuicao via Pix</p>
             <h2 className="font-heading mt-3 text-[2rem] leading-none text-foreground sm:text-4xl">Se preferir transferir</h2>
