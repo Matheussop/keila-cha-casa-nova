@@ -210,13 +210,13 @@ export function GiftRegistryPage({ initialData }: { initialData: PublicData }) {
             </div>
           </div>
 
-          <div className="order-1 relative min-h-[220px] overflow-hidden rounded-[24px] bg-[#ffcdb9] sm:min-h-[320px] sm:rounded-[32px] lg:order-2 lg:min-h-[360px]">
+          <div className="order-1 relative min-h-[220px] overflow-hidden rounded-[24px] bg-[#ffcdb9] p-3 sm:min-h-[320px] sm:rounded-[32px] sm:p-4 lg:order-2 lg:min-h-[360px] lg:p-5">
             <Image
-              src="/housewarming-hero.svg"
+              src="/housewarming-hero.png"
               alt="Ilustracao decorativa de casa nova"
               fill
               priority
-              className="object-cover object-center"
+              className="object-contain object-center"
             />
 
             <StickerDecoration
